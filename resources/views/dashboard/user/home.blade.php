@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Page Responsable</title>
+  <title>Page </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,7 +10,13 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
+  <!-- Font awesome-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- favicon (cad logo qui est s'affiche dans l'onglet de la page) -->
+<link rel="icon" type="img/png" href="{{ asset('iconOnglet/img/favicon.ico') }}"/>
+ 
+ <style>
   body {
     font: 400 15px/1.8 Lato, sans-serif;
     color: #777;
@@ -252,8 +258,8 @@ ul{
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#myPage">Mon profile</a></li>
-        <li><a href="#">Notification</a></li>
-        <li><a href="#">Voiries(consultation)</a></li>
+        <!-- <li><a href="#">Notification</a></li> -->
+        <li><a href="{{ route('user.home') }}">Voiries(consultation)</a></li>
         
         <!-- pour l'inscription -->
          
@@ -265,7 +271,7 @@ ul{
             type utilisateur cad wash large public ou Entreprise ou concessionnaire ... etc -->
         <!--  <li> {{ Auth::guard('web')->user()->typeuser }} </li>  -->
             <li> Utilisateur </li> 
-            <li> {{ Auth::guard('web')->user()->name }} </li>
+            <li><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::guard('web')->user()->name }} </li>
             <li> <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Déconnexion</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form> </li> 
           </ul>
@@ -330,7 +336,7 @@ ul{
   	 			<h4>About-nous</h4>
   	 			<ul>
   	 				<li><a href="#"><< GVCD Company >> est spécialisée dans la gestion des voiries communaux et ses dépendances offre plusieurs solutions</a></li>
-  	 				<li><a href="#"><img src="images/gestion.png" alt="Sgestion" width="200" height="100"></a></li>
+  	 				<li><a href="#"><img src="{{asset('images/gestion.png') }}" alt="Sgestion" width="200" height="100"></a></li>
   	 				
   	 			</ul>
   	 		</div>

@@ -57,7 +57,7 @@ $responsable->notify(new NewCompte($responsable));
       $creds = $request->only('email','password');
 
       if( Auth::guard('responsable')->attempt($creds) ){
-          return redirect()->route('responsable.home');
+          return redirect()->route('responsable.allvoirie');
       }else{
           return redirect()->route('responsable.login')->with('fail','Données incorrectes');
       }
@@ -68,4 +68,22 @@ $responsable->notify(new NewCompte($responsable));
      // return redirect('/');
      return redirect('/template');
   }
+
+  function consultationVoirie(){
+    Auth::guard('responsable');
+   // return redirect('/');
+   return redirect('/consultationVoirie');
+}
+
+function profile(){
+    Auth::guard('responsable');
+   // return redirect('/');
+   return redirect('/profile');
+}
+
+function gestionCompte(){
+    Auth::guard('responsable');
+   // return redirect('/');
+   return redirect('/gestionCompte');
+}
 }

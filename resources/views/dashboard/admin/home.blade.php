@@ -9,6 +9,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- favicon (cad logo qui est s'affiche dans l'onglet de la page) -->
+<link rel="icon" type="img/png" href="{{ asset('iconOnglet/img/favicon.ico') }}"/>
+  
   <style>
   body {
     font: 400 15px/1.8 Lato, sans-serif;
@@ -166,9 +170,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">Mon profile</a></li>
         
-        <li><a href="#">Gestion des comptes</a></li>
+        
+        <li><a href="{{ route('admin.gestioncompte') }}">Gestion des comptes</a></li>
 
 
         <li class="dropdown">

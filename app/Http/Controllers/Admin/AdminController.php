@@ -73,4 +73,9 @@ class AdminController extends Controller
    {
        return view ('loginAs');
    }
+
+   function gestioncompte ()
+   {
+       return view ('gestioncompte');
+   }
 }

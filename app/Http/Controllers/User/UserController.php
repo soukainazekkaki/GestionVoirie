@@ -38,7 +38,7 @@ class UserController extends Controller
 
 // si user est bien insérer on affiche un msg de succés sur la page de register
         if( $save ){
-            return redirect()->back()->with('success','Vous êtes maintenant enregistré avec succès');
+            return redirect()->back()->with('success','l enregistrement a été fait avec succès');
         }else{
             return redirect()->back()->with('fail','Quelque chose a mal tourné, n a pas réussi à s inscrire');
         }
@@ -69,4 +69,52 @@ function logout(){
     //return redirect('/');
     return redirect('/template');
 }
+
+function profile ()
+   {
+       return view ('profile');
+   }
+
+   //fonction permet d'afficher tous les users en detail existent dans bdd vers la page gestioncompte
+   public function affichage()
+   {
+       $users = User::orderBy('id')->get();
+       return view('dashboard.responsable.gestionCompte', compact ('users'));
+       
+   }
+
+   //fonction permet supprimer les données selon un nom selectionnées
+   public function delete($id)
+   {
+       $users=User::find($id);
+       $users->delete();
+       return redirect()->route('responsable.gestionCompte')->with('users,$users');
+   }
+
+   //fonction permer modifier les données ajoutés 
+   public function edit($id)
+   {
+          $users=User::find($id);
+          return view ('dashboard.responsable.edituser')->with('users',$users);
+   }
+   //cette fonction nous permet donner la page qu'on va faire les modification sur des données d'utilisateur en détail déja existe dans systéme
+   public function update(Request $request,$id)
+   {
+
+    $validate = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email'
+        
+]);
+
+
+
+       $users=User::find($id);
+       $users->name = $request['name'];
+       $users->email = $request['email'];
+       $users->save();
+   
+   return redirect()->route('responsable.gestionCompte')->with('success','Les données sont bien modifiés.');
+   }
+
 }

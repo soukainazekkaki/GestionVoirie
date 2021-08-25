@@ -4,12 +4,17 @@
   <title>Page principale</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- favicon (cad logo qui est s'affiche dans l'onglet de la page) -->
+<link rel="icon" type="img/png" href="{{ asset('iconOnglet/img/favicon.ico') }}"/>
+  
   <style>
   body {
     font: 400 15px/1.8 Lato, sans-serif;
@@ -262,7 +267,10 @@ ul{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">GVCD Company logo</a>
+      <a class="navbar-brand" href="#myPage">
+      <img src="images/icon-geometre.png" alt="" width="40" height="24" class="d-inline-block align-text-top">
+      GVCD Company
+    </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
