@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//Hadi zadnaha car on va travailler par le controlleur dans les routes
+
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Responsable\ResponsableController;
@@ -24,24 +24,21 @@ use Illuminate\Notifications\Notification;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::prefix('user')->name('user.')->group(function(){
-  // guest cad spécifier le type de persoone authentifié (login et register)
+  // guest cad spécifier le type de personne authentifié (login et register)
 //on a ajouté PreventBackHistory pour bien structurer les choses si on retourne en arriére
     Route::middleware(['guest:web','PreventBackHistory'])->group(function(){
           Route::view('/login','dashboard.user.login')->name('login');
           Route::view('/register','dashboard.user.register')->name('register');
 
           Route::view('/profile','dashboard.user.profile')->name('profile');
-          // pour créer un nv user hadi la route likan7atoha f Form dyal register 
-          //bash kitsefto les données dyal formulaire o b méthode post(lier avec register)
           Route::post('/create',[UserController::class,'create'])->name('create');
-          //Pour vérifier la connexion de user (lier avec login )
           Route::post('/check',[UserController::class,'check'])->name('check');
         
     });
