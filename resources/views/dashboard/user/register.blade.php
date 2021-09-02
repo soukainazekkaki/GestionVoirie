@@ -42,7 +42,19 @@
                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                     </div>
-                      <div class="form-group">
+                    <div class="form-group">
+                    <label for="profile"><i class="fa fa-mouse-pointer " aria-hidden="true"></i> Profile</label>
+                <select class="form-control" name="profile">
+                <option selected>Ouvrir ce menu de sélection</option>
+                <option value="amendis">Concessionnaire de service (Amendis)</option>
+                <option value="redal">Concessionnaire de service (Redal)</option>
+                <option value="ingenieur">Ingénieurs et BET</option>
+                <option value="entreprise">Entreprises du BTP</option>
+                <option value="large">Large public</option>
+                </select>
+                 <span class="text-danger">@error('profile'){{ $message }}@enderror</span>
+               </div>     
+                 <div class="form-group">
                           <label for="password">Password</label>
                           <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
                           <span class="text-danger">@error('password'){{ $message }} @enderror</span>

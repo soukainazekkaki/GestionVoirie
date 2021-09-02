@@ -23,7 +23,7 @@
             <!-- <img src="images/voirie_gestion.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form method="POST" action="{{ route('responsable.create') }}" id="signup-form" class="signup-form">
+                    <form method="POST" action="{{ route('responsable.createresp') }}" id="signup-form" class="signup-form">
 
                     @if (Session::get('success'))
                         <div class="alert alert-success">
@@ -51,7 +51,7 @@
                             <span class="text-danger">@error('commune'){{ $message }}@enderror</span>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password"  placeholder="Enter password" value="{{ old('password') }}"/>
+                            <input type="password" class="form-input" name="password" id="password"  placeholder="Enter password" value="{{ old('password') }}"/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                             <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                         </div>

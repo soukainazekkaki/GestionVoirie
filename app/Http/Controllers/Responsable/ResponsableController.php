@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ResponsableController extends Controller
 {
-    function create(Request $request){
+    function createresp(Request $request){
         //Validation des entrées
         $request->validate([
            'name'=>'required',
@@ -36,7 +36,7 @@ $details_admin= [
 ];*/
 $responsable->notify(new NewCompte($responsable));
         if( $save ){
-            return redirect()->back()->with('success','Vous êtes maintenant enregistré avec succès comme Responsable commune');
+            return redirect()->back()->with('success','Vous êtes maintenant enregistré avec succès comme Responsable communal');
             //Envoi des notifications
       
        // $admin->notify(new NewCompte($details_admin));*/

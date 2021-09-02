@@ -253,7 +253,10 @@ ul{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">GVCD Company logo</a>
+      <a class="navbar-brand" href="#myPage">
+      <img src="{{ asset('images/icon-geometre.png') }}" alt="" width="40" height="24" class="d-inline-block align-text-top">
+      GVCD Company
+    </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -295,7 +298,6 @@ ul{
 <div id="band" class="container text-center">
   <h3>On doit faire des blocs des voiries et des blocs des dépendances </h3>
   <p><em>avec des boutons d'ajout, modification, partage, savoir plus</em></p>
-  <p>aussi on doit bien faire un footer </p>
   <br>
   <div class="row">
     

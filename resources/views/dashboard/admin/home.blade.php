@@ -10,6 +10,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
+
+  <!-- Pour que les fontawsome it9raw-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
   <!-- favicon (cad logo qui est s'affiche dans l'onglet de la page) -->
 <link rel="icon" type="img/png" href="{{ asset('iconOnglet/img/favicon.ico') }}"/>
   
@@ -166,13 +171,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <a class="navbar-brand" href="#myPage">
+      <img src="{{ asset('images/icon-geometre.png') }}" alt="" width="40" height="24" class="d-inline-block align-text-top">
+    </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         
         
-        <li><a href="{{ route('admin.gestioncompte') }}">Gestion des comptes</a></li>
+        <li><a href="#">Gestion des comptes</a></li>
 
 
         <li class="dropdown">
@@ -202,7 +209,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li> Administrateur </li> 
-            <li> {{ Auth::guard('admin')->user()->name }} </li>
+            <li><i class='fa fa-user'style='font-size:24px;margin-right:6px'></i> {{ Auth::guard('admin')->user()->name }} </li>
             <li> <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Déconnexion</a>
                                      <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form> </li> 
           </ul>

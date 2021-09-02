@@ -61,7 +61,6 @@ Route::prefix('user')->name('user.')->group(function(){
     // on a spécifié name de guard => auth:admin
         Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
             Route::view('/home','dashboard.admin.home')->name('home');
-            Route::view('/hgestioncompte','dashboard.admin.gestioncompte')->name('gestioncompte');
             //Route::view('/admindash','dashboard.admin.admindash')->name('admindash');
             Route::post('/logout',[AdminController::class,'logout'])->name('logout');
         });
@@ -74,7 +73,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::middleware(['guest:responsable','PreventBackHistory'])->group(function(){
              Route::view('/login','dashboard.responsable.login')->name('login');
              Route::view('/register','dashboard.responsable.register')->name('register');
-             Route::post('/create',[ResponsableController::class,'create'])->name('create');
+             Route::post('/createresp',[ResponsableController::class,'createresp'])->name('createresp');
              Route::post('/check',[ResponsableController::class,'check'])->name('check');
         });
  

@@ -374,7 +374,7 @@ déblai.
  intercommunale  </p> <br>
   <div class="row">
     <div class="col-sm-4">
-      <p class="text-center"><strong>Exemple de voirie traitée1</strong></p><br>
+      <p class="text-center"><strong></strong></p><br>
       <a href="#" data-toggle="collapse">
         <img src="images/geovoirie.jpg" class="img-circle person" alt="Nom Voirie" width="255" height="255">
       </a>
@@ -385,7 +385,7 @@ déblai.
       </div>
     </div>
     <div class="col-sm-4">
-      <p class="text-center"><strong>Exemple de voirie traitée2</strong></p><br>
+      <p class="text-center"><strong></strong></p><br>
       <a href="#" data-toggle="collapse">
         <img src="images/geovoirie1.png" class="img-circle person" alt="NOM VOIRIE" width="255" height="255">
       </a>
@@ -396,7 +396,7 @@ déblai.
       </div>
     </div>
     <div class="col-sm-4">
-      <p class="text-center"><strong>Exemple de voirie traitée3</strong></p><br>
+      <p class="text-center"><strong></strong></p><br>
       <a href="#" data-toggle="collapse">
         <img src="images/geovoirie2.png" class="img-circle person" alt="Nom de Voirie" width="255" height="255">
       </a>
@@ -421,7 +421,7 @@ déblai.
         <div class="thumbnail">
           <img src="images/data-collection.png" alt="SERVICE1" width="200" height="100">
           <p><strong>Collecte et Enquête</strong></p>
-          <p>Petite description sur ce service</p>
+          <p>GVCD vous offre son expertise et son savoir faire pour récupérer toute information à caractère géographique .</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Savoir plus</button>
         </div>
       </div>
@@ -429,7 +429,7 @@ déblai.
         <div class="thumbnail">
           <img src="images/webmap.png" alt="SERVICE2" width="400" height="300">
           <p><strong>WEBMAPPING</strong></p>
-          <p>Petite description sur ce service</p>
+          <p>Assistance pour performer les processus, faire une meilleure synthèse et analyse de tous les besoins.</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Savoir plus</button>
         </div>
       </div>
@@ -437,7 +437,7 @@ déblai.
         <div class="thumbnail">
           <img src="images/SIG.jpg" alt="SERVICE3" width="400" height="300">
           <p><strong>SIG</strong></p>
-          <p>Petite description sur ce service</p>
+          <p>Assistance pour la mise en place des Systèmes d'Informations Géographiques (SIG) depuis l'étude des besoins jusqu'au déploiment.</p>
           <button class="btn" data-toggle="modal" data-target="#myModal">Savoir plus</button>
         </div>
       </div>

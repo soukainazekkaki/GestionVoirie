@@ -21,6 +21,7 @@ class UserController extends Controller
             'name'=>'required',
             // doit étre renseigner et prend la forme d'email et il doit étre unique 
             'email'=>'required|email|unique:users,email',
+            'profile'=>'required|min:5|max:60',
             // Doit contenir min 5 caractéres et max 30 caractére 
             'password'=>'required|min:5|max:30',
             // doit étre de méme mot de passe entré avant 
@@ -31,6 +32,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->profile = $request->profile;
         $user->password = \Hash::make($request->password);
         $save = $user->save();
 
@@ -103,7 +105,8 @@ function profile ()
 
     $validate = $request->validate([
         'name' => 'required',
-        'email' => 'required|email'
+        'email' => 'required|email',
+        'profile' => 'required|min:5|max:30'
         
 ]);
 
@@ -112,6 +115,7 @@ function profile ()
        $users=User::find($id);
        $users->name = $request['name'];
        $users->email = $request['email'];
+       $users->profile = $request['profile'];
        $users->save();
    
    return redirect()->route('responsable.gestionCompte')->with('success','Les données sont bien modifiés.');

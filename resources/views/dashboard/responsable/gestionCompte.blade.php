@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  
+  <!-- Pour que les fontawsome it9raw-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 <!-- favicon (cad logo qui est s'affiche dans l'onglet de la page) -->
 <link rel="icon" type="img/png" href="{{ asset('iconOnglet/img/favicon.ico') }}"/>
 
@@ -212,7 +213,20 @@ tbody tr:nth-child(even){
                 </div>
               </div>
 
-              
+              <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                <label for="profile"><i class="fa fa-mouse-pointer " aria-hidden="true"></i> Profile</label>
+                <select class="form-control" name="profile">
+                <option selected>Ouvrir ce menu de sélection</option>
+                <option value="amendis">Concessionnaire de service (Amendis)</option>
+                <option value="redal">Concessionnaire de service (Redal)</option>
+                <option value="ingenieur">Ingénieurs et BET</option>
+                <option value="entreprise">Entreprises du BTP</option>
+                <option value="large">Large public</option>
+                </select>
+                 <span class="text-danger">@error('profile'){{ $message }}@enderror</span>
+                </div>
+               </div>
 
               <div class="row">
                 <div class="col-md-12 form-group mb-3">
@@ -277,6 +291,7 @@ tbody tr:nth-child(even){
     <tr>
         <th>Nom</th>
         <th>Email</th>
+        <th>Profile</th>
         <th>Action</th>
     </tr>
 </thead>
@@ -287,6 +302,7 @@ tbody tr:nth-child(even){
             <tr>
                 <td>{{ $users->name }}</td> 
                <td>{{ $users->email }}</td>
+               <td>{{ $users->profile }}</td>
                <td><a href="{{route('responsable.edituser',$users->id) }}"class="btn btn-info btn-xs" style="background-color:#20B2AA;">
                <i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a>
                                                                     

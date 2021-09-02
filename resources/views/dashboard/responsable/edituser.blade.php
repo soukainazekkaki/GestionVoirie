@@ -35,6 +35,17 @@
                   <label for="" class="col-form-label"><i class="fa fa-envelope" aria-hidden="true"></i> Email *</label>
                   <input type="text" class="form-control" name="email" id="email"  value="{{$users->email}}">
                 </div>
+                <div class="col-md-12 form-group mb-3">
+                <label for="profile">Profile</label>
+                <select class="form-control" name="profile">
+                <option selected >{{$users->profile}}</option>
+                <option value="amendis">Concessionnaire de service (Amendis)</option>
+                <option value="redal">Concessionnaire de service (Redal)</option>
+                <option value="ingenieur">Ingénieurs et BET</option>
+                <option value="entreprise">Entreprises du BTP</option>
+                <option value="large">Large public</option>
+                </select>
+                 
               </div>
 
 
